@@ -1,0 +1,55 @@
+:root {
+  --wiggle-width: 20;
+  --wiggle-segment-delay: 200ms;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    max-width:100%;
+}
+
+.head, .shoulders, .knees, .toes, .knees, .toes {
+    width: 100px;
+    height: 100px;
+    background-color: slategray;
+    border: 6px solid black;
+}
+
+.head, .shoulders, .knees {
+    animation: wiggle 1s ease infinite alternate;
+}
+
+.head {
+    animation-delay: calc(1 * var(--wiggle-segment-delay));
+}
+
+.shoulders {
+    animation-delay: calc(2 * var(--wiggle-segment-delay));
+}
+
+.knees {
+    animation-delay: calc(3 * var(--wiggle-segment-delay));
+}
+
+@keyframes wiggle {
+    from {
+        position: relative;
+        left: 0px;
+        right: 0px;
+    }
+    50% {
+        position: relative;
+        left: var(--wiggle-width);
+        right: 0px;
+    }
+    to {
+        position: relative;
+        left: 0px;
+        right: 0px;
+    }
+}
